@@ -6,8 +6,8 @@
 
 	let api = new InternalAPI();
 	let showModal = false;
-	let selectedPage_value: string;
-	selectedPage.subscribe((value) => (selectedPage_value = value));
+	// let selectedPage_value: string;
+	// selectedPage.subscribe((value) => (selectedPage_value = value));
 
 	let modalVersion: string;
 	let modalContent: any;
@@ -86,9 +86,7 @@
 
 <!-- TODO: Prevent doing the check twice -->
 {#if showModal}
-	<ReleaseDetail bind:showModal version={modalVersion} content={modalContent}>
-		<h2>HELLO</h2>
-	</ReleaseDetail>
+	<ReleaseDetail bind:showModal version={modalVersion} content={modalContent}></ReleaseDetail>
 {/if}
 
 <style>
