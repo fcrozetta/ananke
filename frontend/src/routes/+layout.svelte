@@ -14,7 +14,11 @@
 					<div class="flex h-16 justify-between">
 						<div class="flex">
 							<div class="flex flex-shrink-0 items-center">
-								<img class="hidden h-20 w-auto lg:block" src="wizard.png" alt="Fer Crozetta" />
+								<img
+									class="hidden h-20 w-auto lg:block"
+									src="/src/lib/images/wizard.png"
+									alt="Fer Crozetta"
+								/>
 							</div>
 							<div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
 								<!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
