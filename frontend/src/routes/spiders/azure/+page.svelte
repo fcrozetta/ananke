@@ -66,17 +66,6 @@
 								>View release</button
 							>
 						</div>
-						<!-- {#each Object.entries(contents) as [key, value]} -->
-						<!-- {#if key != '_release_date'} -->
-						<!-- <h3>{key}</h3> -->
-						<!-- <ul> -->
-						<!-- {#each value as v} -->
-						<!-- Rendering the list as HTML to use the <code> tags in the lists -->
-						<!-- <li>{@html v}</li> -->
-						<!-- {/each} -->
-						<!-- </ul> -->
-						<!-- {/if} -->
-						<!-- {/each} -->
 					</li>
 				{/each}
 			</ul>

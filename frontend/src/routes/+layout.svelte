@@ -72,8 +72,7 @@
 					</div>
 				</header>
 				<main>
-					<div class="px-4 py-8 lg:px-8 h-full w-full" style="border: 1px solid red;">
-						<!-- Your content -->
+					<div class="px-4 py-8 lg:px-8 h-full w-full">
 						<slot />
 					</div>
 				</main>
