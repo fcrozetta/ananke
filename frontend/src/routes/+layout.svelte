@@ -15,9 +15,9 @@
 						<div class="flex">
 							<div class="flex flex-shrink-0 items-center">
 								<img
-									class="hidden h-20 w-auto lg:block"
-									src="/src/lib/images/wizard.png"
-									alt="Fer Crozetta"
+									class="hidden h-16 w-auto lg:block"
+									src="/src/lib/images/ananke_003_transparent.png"
+									alt="Ananke"
 								/>
 							</div>
 							<div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
