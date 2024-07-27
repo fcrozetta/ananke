@@ -26,6 +26,12 @@ async def add_job():
     apscheduler.schedulers.base.BaseScheduler.add_job(
         scheduler, x.run, "interval", seconds=5
     )
+    apscheduler.schedulers.base.BaseScheduler.add_job(
+        scheduler, x.run, "cron", day_of_week="mon-sun", hour=23, minute=44, second=0
+    )
+    apscheduler.schedulers.base.BaseScheduler.add_job(
+        scheduler, x.run, "date", run_date="2024-07-26 14:00:00"
+    )
 
 
 def job_manual():

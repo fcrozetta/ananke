@@ -57,6 +57,18 @@
 									aria-current="page"
 									>Kitchen
 								</a>
+								<a
+									href="/scheduler"
+									class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
+									class:border-indigo-500={selectedPage_value == 'scheduler'}
+									class:border-transparent={selectedPage_value != 'scheduler'}
+									class:text-gray-500={selectedPage_value != 'scheduler'}
+									class:text-gray-900={selectedPage_value == 'scheduler'}
+									class:hover:border-gray-300={selectedPage_value != 'scheduler'}
+									class:hover:text-gray-700={selectedPage_value != 'scheduler'}
+									aria-current="page"
+									>scheduler
+								</a>
 							</div>
 						</div>
 					</div>
