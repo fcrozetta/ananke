@@ -5,6 +5,7 @@ export class InternalAPI {
 		this.url = 'http://0.0.0.0:8000';
 	}
 
+	//! SPIDERS
 	async listSpiders() {
 		return await this.getData('/spiders')
 			.then((res) => {
@@ -26,6 +27,30 @@ export class InternalAPI {
 			});
 	}
 
+	// ! Scheduler
+	async getCronJobs() {
+		return await this.getData('/cron/mock')
+			.then((res) => {
+				let result = res.json();
+				return result;
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	}
+
+	async addCronTask() {
+		return await this.postData('/cron', {})
+			.then((res) => {
+				let result = res.json();
+				return result;
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	}
+
+	// ! internal calls
 	private async getData(endpoint: string): Promise<Response> {
 		return await fetch(this.url + endpoint);
 	}
