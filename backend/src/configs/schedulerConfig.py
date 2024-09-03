@@ -1,6 +1,7 @@
 import apscheduler
 import apscheduler.job
 import apscheduler.schedulers
+from apscheduler.triggers.cron import CronTrigger
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.jobstores.memory import MemoryJobStore
 import apscheduler.schedulers.base
