@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, model_serializer, field_serializer
 import datetime as dt
 
 
@@ -21,7 +21,14 @@ class SchedulerCronTriggerBaseSchema(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     trigger_type: str = "cron"
-    run_date: dt.datetime
+    start_date: dt.datetime | None
+    end_date: dt.datetime | None
+    crontab: object | None
+
+    @field_serializer("crontab")
+    def serialize_crontab(self, crontab: object, _info):
+        x = tmp_dict = {k: str(v) for (k, v) in zip}
+        return f"{x['minute']} {x['hour']} {x['day']} {x['month']} {x['day_of_week']}"
 
 
 class SchedulerTaskBaseSchema(BaseModel):
@@ -31,4 +38,8 @@ class SchedulerTaskBaseSchema(BaseModel):
     name: str
     next_run_time: dt.datetime
     pending: bool
-    trigger: SchedulerIntervalTriggerBaseSchema | SchedulerDateTriggerBaseSchema
+    trigger: (
+        # SchedulerIntervalTriggerBaseSchema
+        # | SchedulerDateTriggerBaseSchema
+        SchedulerCronTriggerBaseSchema
+    )
