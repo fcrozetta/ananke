@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from routers.spiderRouter import app as spider
 from routers.schedulerRouter import app as cron
+from routers.moiraiRouter import app as moirai
 
 from configs.schedulerConfig import scheduler
 
@@ -40,3 +41,4 @@ def root():
 
 app.include_router(spider)
 app.include_router(cron)
+app.include_router(moirai)

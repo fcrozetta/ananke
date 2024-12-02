@@ -69,6 +69,18 @@
 									aria-current="page"
 									>scheduler
 								</a>
+								<a
+									href="/moirai"
+									class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
+									class:border-indigo-500={selectedPage_value == 'moirai'}
+									class:border-transparent={selectedPage_value != 'moirai'}
+									class:text-gray-500={selectedPage_value != 'moirai'}
+									class:text-gray-900={selectedPage_value == 'moirai'}
+									class:hover:border-gray-300={selectedPage_value != 'moirai'}
+									class:hover:text-gray-700={selectedPage_value != 'moirai'}
+									aria-current="page"
+									>Moirai
+								</a>
 							</div>
 						</div>
 					</div>
