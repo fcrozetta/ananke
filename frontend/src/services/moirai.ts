@@ -22,7 +22,12 @@ export const connectToWebSocket = (jobId: string): WebSocket => {
 	};
 
 	socket.onmessage = (event) => {
-		console.log('WebSocket message received:', event.data);
+		try {
+			const message = JSON.parse(event.data);
+			console.log('WebSocket JSON message received:', message);
+		} catch (e) {
+			console.log('WebSocket text message received:', event.data);
+		}
 	};
 
 	socket.onerror = (error) => {

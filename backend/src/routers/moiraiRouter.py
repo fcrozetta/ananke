@@ -1,5 +1,6 @@
+import asyncio
 from fastapi.routing import APIRouter
-from fastapi.websockets import WebSocketDisconnect, WebSocket
+from fastapi.websockets import WebSocketDisconnect, WebSocket, WebSocketState
 from services.scrapy import Spider
 from moirai_engine.core.engine import Engine
 from moirai_engine.utils.samples import hello_world, slow_hello_world
@@ -25,15 +26,16 @@ async def add_hello():
 @app.websocket("/{job_id}")
 async def notifications(websocket: WebSocket, job_id: str):
     async def listener(event):
+        if websocket.client_state == WebSocketState.DISCONNECTED:
+            # await e.remove_listener(job_id, listener=listener)
+            return
         await websocket.send_text(event)
 
     await websocket.accept()
-    await e.add_listener(job_id, listener=listener)
+    e.add_listener(listener=listener, job_id=job_id)
     try:
         while True:
-            event = await websocket.receive_text()
-            # await websocket.send_text(
-            #     event
-            # )  # Echo the received message back to the client
+            await asyncio.sleep(1)
     except WebSocketDisconnect:
-        await e.remove_listener(job_id, listener=listener)
+        ...
+        # await e.remove_listener(job_id, listener=listener)
