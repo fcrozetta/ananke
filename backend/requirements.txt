@@ -37,7 +37,7 @@ orjson==3.11.6
 packaging==24.1
 parsel==1.9.1
 Protego==0.3.1
-pyasn1==0.6.0
+pyasn1==0.6.3
 pyasn1_modules==0.4.0
 pycparser==2.22
 pydantic==2.8.2
